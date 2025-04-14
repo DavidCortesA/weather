@@ -1,0 +1,10 @@
+@import './base.css';
+@unocss all;
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  border-box: box-sizing;
+}
