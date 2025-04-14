@@ -1,45 +1,122 @@
-# wheater
+# 🌦️ Weather App
 
-This template should help get you started developing with Vue 3 in Vite.
+Una aplicación web del clima construida con **Vue 3**, **Vite** y **TypeScript**, que permite consultar el pronóstico de 7 días por ciudad utilizando la API de OpenWeatherMap.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🧰 Tecnologías Utilizadas
 
-## Type Support for `.vue` Imports in TS
+- ⚙️ **Vue 3** + Composition API
+- 🛠️ **Vite** como bundler
+- ✨ **TypeScript** para tipado estático
+- 🎨 **UnoCSS** para estilos
+- 🌤️ **OpenWeatherMap API** para datos climáticos
+- 📊 **Chart.js + vue-chartjs** para visualizaciones (opcional)
+- ✅ **Vitest** y **Vue Test Utils** para testing
+- 📦 **Axios** para llamadas HTTP
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## 🚀 Instalación
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+1. Clona el repositorio:
 
-## Project Setup
+```bash
+git clone https://github.com/DavidCortesA/weather.git
+cd weather-app
+```
 
-```sh
+2. Instala las dependencias:
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3. Ejecuta el servidor de desarrollo:
 
-```sh
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+---
 
-```sh
-npm run build
-```
+## 🧪 Testing
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Para ejecutar los tests unitarios:
 
-```sh
+```bash
 npm run test:unit
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+---
 
-```sh
+## 🧼 Linting y Formato
+
+- Lint con ESLint:
+
+```bash
 npm run lint
 ```
+
+- Formateo con Prettier:
+
+```bash
+npm run format
+```
+
+---
+
+## 📁 Estructura del Proyecto
+
+```bash
+src/
+├── components/         # Componentes como SearchBar y WeatherDetails
+├── assets/             # Recursos estáticos
+├── App.vue             # Componente raíz
+├── main.ts             # Punto de entrada
+```
+
+---
+
+## 🧠 Funcionalidades
+
+- 🔍 Buscar el clima por ciudad y país
+- 🌡️ Mostrar temperaturas máximas y mínimas por día
+- 🖼️ Íconos y descripciones del estado del tiempo
+- 🗓️ Pronóstico de 7 días con diseño responsivo
+
+---
+
+## 📦 Scripts Útiles
+
+| Script                | Descripción                          |
+|----------------------|--------------------------------------|
+| `dev`                | Inicia el servidor de desarrollo     |
+| `build`              | Compila el proyecto para producción  |
+| `preview`            | Previsualiza la app compilada        |
+| `test:unit`          | Ejecuta los tests con Vitest         |
+| `lint`               | Ejecuta ESLint y Oxlint              |
+| `format`             | Aplica Prettier a los archivos       |
+| `type-check`         | Verifica tipos con Vue TSC           |
+
+---
+
+## 🔐 Variables de Entorno
+
+Crea un archivo `.env` en la raíz del proyecto con tu clave de API de OpenWeatherMap:
+
+```env
+VITE_API_KEY=tu_api_key_aqui
+```
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT.
+
+---
+
+## ✍️ Autor
+
+Desarrollado con ❤️ por [David Cortez A](https://github.com/DavidCortesA)
