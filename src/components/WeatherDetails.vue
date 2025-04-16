@@ -1,8 +1,26 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+interface WeatherItem {
+  dt: number
+  main: {
+    temp: number
+    temp_max: number
+    temp_min: number
+    date: string
+    time: string
+    icon: string
+    description: string
+  }
+  weather: {
+    icon: string
+    description: string
+  }[]
+}
+
 const props = defineProps({
   weatherData2: Object,
+  typeWeather: String,
 })
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -12,9 +30,9 @@ const dataListPerDay = computed(() => {
     return [] // Retorna un array vacío si no hay datos
   }
 
-  const dailyData: { [key: string]: { temp_max: number; temp_min: number; date: string } } = {}
+  const dailyData: { [key: string]: { temp_max: number; temp_min: number; date: string, name: number, icon: string; description: string } } = {}
 
-  props.weatherData2.list.forEach((item) => {
+  props.weatherData2.list.forEach((item:WeatherItem) => {
     const date = new Date(item.dt * 1000)
     const day = date.getDate()
     const month = date.getMonth() + 1
@@ -46,6 +64,8 @@ const dataListPerDay = computed(() => {
   return Object.values(dailyData) // Convierte el objeto en un array de valores
 })
 
+console.log(dataListPerDay);
+
 const getWeatherIcon = (iconCode: string) => {
   return `https://openweathermap.org/img/wn/${iconCode}@2x.png`
 }
@@ -68,7 +88,7 @@ const getWeatherIcon = (iconCode: string) => {
         </p>
         <p>
           <span class="font-bold">{{ Math.round(item.temp_max) }}</span
-          >/{{ Math.round(item.temp_min) }}°
+          >/{{ Math.round(item.temp_min) }}°{{ typeWeather === 'metric' ? 'C' : 'F' }}
         </p>
       </li>
     </ul>

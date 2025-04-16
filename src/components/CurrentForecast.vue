@@ -1,8 +1,26 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+interface WeatherItem {
+  dt: number
+  main: {
+    temp: number
+    temp_max: number
+    temp_min: number
+    date: string
+    time: string
+    icon: string
+    description: string
+  }
+  weather: {
+    icon: string
+    description: string
+  }[]
+}
+
 const props = defineProps({
   todayForecast: Object,
+  typeWeather: String,
 })
 
 const thisDays = computed(() => {
@@ -10,16 +28,16 @@ const thisDays = computed(() => {
     return []
   }
 
-  const dailyData: { [key: string]: { temp: number; icon: string; description: string } } = {}
+  const dailyData: { [key: string]: { temp: number; icon: string; description: string, date: string, time: string, temp_max?: number; temp_min?: number } } = {}
 
-  props.todayForecast.list.forEach((item) => {
+  props.todayForecast.list.forEach((item:WeatherItem) => {
     const date = new Date(item.dt * 1000)
     const day = date.getDate()
     const month = date.getMonth() + 1
     const year = date.getFullYear()
     const formattedDate = `${day}/${month}/${year}`
 
-    const formattedTime = date.toLocaleTimeString('en-US', {
+    const formattedTime:string = date.toLocaleTimeString('en-US', {
       hour: '2-digit',
       minute: '2-digit',
       hour12: true, // Usa AM/PM
@@ -35,11 +53,11 @@ const thisDays = computed(() => {
       }
     } else {
       dailyData[formattedDate].temp_max = Math.max(
-        dailyData[formattedDate].temp_max,
+        dailyData[formattedDate]?.temp_max ?? item.main.temp_max,
         item.main.temp_max,
       )
       dailyData[formattedDate].temp_min = Math.min(
-        dailyData[formattedDate].temp_min,
+        dailyData[formattedDate]?.temp_min ?? item.main.temp_min,
         item.main.temp_min,
       )
     }
@@ -56,7 +74,7 @@ const thisDays = computed(() => {
       <li v-for="item in thisDays" :key="item.date" class="flex flex-col items-center">
         <p>{{ item.time }}</p>
         <img :src="`https://openweathermap.org/img/wn/${item.icon}@2x.png`" alt="Weather Icon" />
-        <p>{{ item.temp }}</p>
+        <p>{{ item.temp }}°{{ typeWeather === 'metric' ? 'C' : 'F' }}</p>
       </li>
     </ul>
   </div>

@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 import { Icon as IconComponent } from '@iconify/vue'
 
-const city: string = ref('')
-const emit: () => void = defineEmits(['search'])
+const city = ref<string>('')
+const emit = defineEmits(['search'])
 
 const search = () => {
   emit('search', city.value)
