@@ -1,6 +1,42 @@
 # 🌦️ Weather App
 
+[![Status](https://img.shields.io/badge/Status-Active-success.svg)](https://github.com/DavidCortesA/weather)
+[![Version](https://img.shields.io/badge/Version-0.0.0-blue.svg)](https://github.com/DavidCortesA/weather)
+[![Vue.js](https://img.shields.io/badge/Vue.js-3.5.13-42b883?logo=vue.js)](https://vuejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.0-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.2.4-646CFF?logo=vite)](https://vitejs.dev/)
+[![UnoCSS](https://img.shields.io/badge/UnoCSS-66.1.0-333?logo=unocss)](https://unocss.dev/)
+[![Tests](https://img.shields.io/badge/Tests-Vitest-green?logo=vitest)](https://vitest.dev/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Una aplicación web del clima construida con **Vue 3**, **Vite** y **TypeScript**, que permite consultar el pronóstico de 7 días por ciudad utilizando la API de OpenWeatherMap.
+
+<div align="center">
+
+<!-- Tipo de proyecto -->
+`#web-application` `#spa` `#frontend` `#weather-app` `#open-source`
+
+<!-- Stack tecnológico -->
+`#vue3` `#typescript` `#vite` `#unocss` `#composition-api` `#chart-js` `#vitest`
+
+<!-- Características -->
+`#responsive-design` `#weather-forecast` `#api-integration` `#data-visualization` `#search-functionality`
+
+<!-- Dominio -->
+`#weather` `#forecast` `#meteorology` `#climate-data` `#openweathermap`
+
+<!-- Estado -->
+`#active-development` `#version-0.0.0` `#maintained`
+
+</div>
+
+## 🖼️ Vista Previa
+
+<div align="center">
+  <img src="public/preview.png" alt="Weather App Preview" width="800">
+</div>
+
+> 🚀 Consulta el clima de cualquier ciudad del mundo con una interfaz intuitiva y datos visuales claros.
 
 ---
 
