@@ -1,7 +1,5 @@
 # 🌦️ Weather App
 
-[![Status](https://img.shields.io/badge/Status-Active-success.svg)](https://github.com/DavidCortesA/weather)
-[![Version](https://img.shields.io/badge/Version-0.0.0-blue.svg)](https://github.com/DavidCortesA/weather)
 [![Vue.js](https://img.shields.io/badge/Vue.js-3.5.13-42b883?logo=vue.js)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.0-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.2.4-646CFF?logo=vite)](https://vitejs.dev/)
